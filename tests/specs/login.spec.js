@@ -8,6 +8,6 @@ describe('Success login tests', () => {
     })
 
     it('Login', () => {
-        loginPage.doLogin('pedrohnsc@gmail.com', '123456')
+        loginPage.doLogin('pedro.nascimento', '123456')
     })
 })
