@@ -6,7 +6,7 @@ module.exports.config = {
     capabilities: {
         browserName: "chrome",
     },
-    directConnect = true,
+    //directConnect: true,
 
     onPrepare: () => {
         browser.waitForAngularEnabled(false);
