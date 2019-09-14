@@ -7,17 +7,22 @@ describe('Tests related to Report Issue', () => {
     const messagesPage = new Messages
     const reportPage = new Report
 
-    beforeEach(()=>{
+    beforeEach(() => {
         browser.get(browser.baseUrl)
-        loginPage.doLogin('pedro.nascimento','123456')
+        loginPage.doLogin('pedro.nascimento', '123456')
         reportPage.goToReportIssue()
     })
+
+    afterEach(() => {
+        loginPage.doLogout()
+    })
+    
     it('Report an Issue', () => {
         reportPage.fillReportIssueForm()
         expect(messagesPage.getSuccessMessage()).toContain('Operation successful.')
     })
 
-    fit('Try to report an issue with blank field', ()=>{
+    it('Try to report an issue with blank field', () => {
         reportPage.clickButtonSubmitForm()
         expect(messagesPage.getApplicationErrorMessage()).toBe('A necessary field "Summary" was empty. Please recheck your inputs.')
     })
