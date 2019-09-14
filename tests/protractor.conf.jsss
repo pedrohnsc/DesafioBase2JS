@@ -7,8 +7,15 @@ module.exports.config = {
 
     capabilities: {
         browserName: "chrome",
+        chromeOptions: {
+            args: ["--headless"]
+        },
+        shardTestFiles: true,
+        maxInstances: 2
+
+
     },
-    //directConnect: true,
+    directConnect: true,
 
     onPrepare: () => {
         browser.waitForAngularEnabled(false);

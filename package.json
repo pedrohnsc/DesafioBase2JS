@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "webdriver-manager update && cd tests && protractor protractor.conf.js"
+    "testzin": "webdriver-manager update && cd tests && protractor protractor.conf.js",
+    "test": "npm run test:chrome && npm run test:firefox",
+    "test:chrome": "protractor tests/configurations/chrome.js",
+    "test:firefox": "protractor tests/configurations/firefox.js",
+    "test:multi": "protractor tests/configurations/multiCapabilities.js",
+    "test:chrome:parallel": "protractor tests/configurations/chromeShard.js"
+
   },
   "repository": {
     "type": "git",
