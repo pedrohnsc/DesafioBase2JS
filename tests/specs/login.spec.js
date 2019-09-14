@@ -6,7 +6,7 @@ describe('Success login tests', () => {
     const messagesPage = new Messages
 
     beforeEach(() => {
-        browser.get(' http://mantis-prova.base2.com.br ')
+        browser.get(browser.baseUrl)
     })
 
     afterEach(()=>{
@@ -27,7 +27,6 @@ describe('Failed Login tests', () => {
         browser.get(' http://mantis-prova.base2.com.br ')
     })
 
-
     it('Wrong email', () => {
         loginPage.doLogin('pedro', '123456')
         expect(messagesPage.getWrongEmailOrPasswordMessage()).toContain('Your account may be disabled or blocked or the username/password you entered is incorrect.')
@@ -42,5 +41,4 @@ describe('Failed Login tests', () => {
         loginPage.doLogin('', '')
         expect(messagesPage.getWrongEmailOrPasswordMessage()).toContain('Your account may be disabled or blocked or the username/password you entered is incorrect.')
     })
-
 })
