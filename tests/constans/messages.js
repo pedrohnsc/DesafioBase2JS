@@ -21,6 +21,12 @@ class Messages {
         Helper.waitForElementVisibility(successMessage)
         return successMessage.getText()
     }
+
+    getApplicationErrorMessage(){
+        const aplicationErrorMessage = element(by.css('p.center'))
+        Helper.waitForElementVisibility(aplicationErrorMessage)
+        return aplicationErrorMessage.getText()
+    }
 }
 
 module.exports = Messages;

@@ -10,11 +10,16 @@ describe('Tests related to Report Issue', () => {
     beforeEach(()=>{
         browser.get(browser.baseUrl)
         loginPage.doLogin('pedro.nascimento','123456')
-    })
-    fit('Report an Issue', () => {
         reportPage.goToReportIssue()
+    })
+    it('Report an Issue', () => {
         reportPage.fillReportIssueForm()
         expect(messagesPage.getSuccessMessage()).toContain('Operation successful.')
+    })
+
+    fit('Try to report an issue with blank field', ()=>{
+        reportPage.clickButtonSubmitForm()
+        expect(messagesPage.getApplicationErrorMessage()).toBe('A necessary field "Summary" was empty. Please recheck your inputs.')
     })
 
 })
