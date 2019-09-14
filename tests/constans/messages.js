@@ -11,9 +11,15 @@ class Messages {
         return this.messageLogedIn.getText()
     }
 
-    getWrongEmailOrPasswordMessage(){
+    getWrongEmailOrPasswordMessage() {
         Helper.waitForElementVisibility(this.messageWrongEmailOrPassword)
         return this.messageWrongEmailOrPassword.getText()
+    }
+
+    getSuccessMessage(){
+        const successMessage = element(by.css('body > div:nth-child(5)'))
+        Helper.waitForElementVisibility(successMessage)
+        return successMessage.getText()
     }
 }
 
