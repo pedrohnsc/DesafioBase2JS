@@ -1,5 +1,5 @@
 const Login = require('../page-objects/login.po')
-const Messages = require('../constans/messages')
+const Messages = require('../constants/messages')
 
 describe('Success login tests', () => {
     const loginPage = new Login;

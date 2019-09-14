@@ -1,5 +1,5 @@
 const Login = require('../page-objects/login.po')
-const Messages = require('../constans/messages')
+const Messages = require('../constants/messages')
 const Report = require('../page-objects/reportIssue.po')
 
 describe('Tests related to Report Issue', () => {
