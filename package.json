@@ -18,6 +18,7 @@
   "homepage": "https://github.com/pedrohnsc/DesafioBase2#readme",
   "devDependencies": {
     "faker": "^4.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
     "protractor": "^5.4.2",
     "protractor-helper": "^3.7.11"
   }

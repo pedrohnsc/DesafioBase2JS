@@ -23,7 +23,7 @@ class Messages {
     }
 
     getApplicationErrorMessage(){
-        const aplicationErrorMessage = element(by.css('p.center'))
+        const aplicationErrorMessage = element.all(by.css('p.center')).get(0)
         Helper.waitForElementVisibility(aplicationErrorMessage)
         return aplicationErrorMessage.getText()
     }
