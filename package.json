@@ -8,8 +8,8 @@
     "test:chrome": "protractor tests/configurations/chrome.js",
     "test:firefox": "protractor tests/configurations/firefox.js",
     "test:multi": "protractor tests/configurations/multiCapabilities.js",
-    "test:chrome:parallel": "protractor tests/configurations/chromeShard.js"
-
+    "test:chrome:parallel": "protractor tests/configurations/chromeShard.js",
+    "test:audit": "lighthouse-ci --score=80 http://mantis-prova.base2.com.br"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "faker": "^4.1.0",
     "jasmine-spec-reporter": "^4.2.1",
+    "lighthouse-ci": "^1.10.0",
     "protractor": "^5.4.2",
     "protractor-helper": "^3.7.11"
   }
