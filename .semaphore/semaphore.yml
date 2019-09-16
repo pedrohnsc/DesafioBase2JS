@@ -16,4 +16,4 @@ blocks:
       jobs:
         - name: 'Job #2'
           commands:
-            - npm test
+            - cd DesafioBase2 && npm test
