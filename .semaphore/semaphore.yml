@@ -1,5 +1,3 @@
-# For more Node.js and JavaScript information and examples, see
-# https://docs.semaphoreci.com/article/82-language-javascript-and-nodejs
 version: v1.0
 name: Hello Semaphore
 agent:
@@ -7,12 +5,12 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Node.js example
+  - name: Setup
     task:
       jobs:
-        - name: Run some code
+        - name: 'Job #1'
           commands:
-            - node -p '"evol".split("").reverse().join("")'
-            # Uncomment the following line to pull your code,
-            # then proceed by adding your custom commands:
-            #- checkout
+            - npm install
+        - name: 'Job #2'
+          commands:
+            - npm test
