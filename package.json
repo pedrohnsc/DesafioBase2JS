@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "webdriver-manager update",
-    "test": "npm run test:chrome && npm run test:firefox",
+    "test": "npm run test:chrome",
     "test:chrome": "protractor tests/configurations/chrome.js",
     "test:firefox": "protractor tests/configurations/firefox.js",
     "test:multi": "protractor tests/configurations/multiCapabilities.js",
