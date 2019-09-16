@@ -17,7 +17,7 @@ describe('Tests related to Report Issue', () => {
         loginPage.doLogout()
     })
     
-    fit('Report an Issue', () => {
+    it('Report an Issue', () => {
         reportPage.fillReportIssueForm()
         expect(messagesPage.getSuccessMessage()).toContain('Operation successful.')
     })
