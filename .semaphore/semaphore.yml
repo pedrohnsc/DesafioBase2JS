@@ -11,6 +11,3 @@ blocks:
         - name: 'Job #1'
           commands:
             - npm install
-        - name: 'Job #2'
-          commands:
-            - npm test
