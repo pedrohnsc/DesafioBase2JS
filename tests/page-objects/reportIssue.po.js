@@ -4,9 +4,20 @@ const faker = require('faker')
 class ReportIssue {
     constructor() {
         this.btnReportIssue = element(by.linkText('Report Issue'))
-        this.openCategory = element(by.name('category_id'))
+        this.selectCategory = element(by.name('category_id'))
+        this.selectReproducibility = element(by.name('reproducibility'))
+        this.selectSeverity = element(by.name('severity'))
+        this.selectPriority = element(by.name('priority'))
+        this.selectProfile = element(by.name('profile_id'))
+        this.inputPlataform = element(by.id('plataform'))
+        this.inputOperationalSistem = element(by.id('os'))
+        this.inputOperationalSistemVersion = element(by.id('os_build'))
+        this.selectAssignTo = element(by.name('handler_id'))
         this.inputSumary = element(by.name('summary'))
         this.inputDescription = element(by.name('description'))
+        this.inputStepsToReproduce = element(by.name('steps_to_reproduce'))
+        this.inputAditionalInformation = element(by.name('additional_info'))
+        this.checkboxReportStay = element(by.id('report_stay'))
         this.btnSubmitForm = element(by.css('input.button'))
         this.summary = faker.lorem.paragraph()
         this.description = faker.lorem.text()
@@ -25,19 +36,23 @@ class ReportIssue {
     }
 
     chooseCategory() {
-        Helper.waitForElementVisibility(this.openCategory)
-        Helper.click(this.openCategory)
-        this.clickArrowDownAndPressEnter()
+        this.awaitAndClick(this.selectCategory)
+    }
+
+    chooseReproducibility() {
+        this.awaitAndClick(this.selectReproducibility)
+    }
+
+    chooseSeverity() {
+        this.awaitAndClick(this.chooseSeverity)
     }
 
     fillSumary() {
-        Helper.waitForElementVisibility(this.inputSumary)
-        Helper.fillFieldWithText(this.inputSumary, this.summary)
+        this.awaitAndFillWithText(this.inputSumary, this.summary)
     }
 
     fillDescription() {
-        Helper.waitForElementVisibility(this.inputDescription)
-        Helper.fillFieldWithText(this.inputDescription, this.description)
+        this.awaitAndFillWithText(this.inputDescription, this.description)
     }
 
     clickButtonSubmitForm() {
@@ -48,6 +63,17 @@ class ReportIssue {
     clickArrowDownAndPressEnter() {
         browser.actions().sendKeys(protractor.Key.ARROW_DOWN).perform()
         browser.actions().sendKeys(protractor.Key.ENTER).perform()
+    }
+
+    awaitAndFillWithText(element, text) {
+        Helper.waitForElementVisibility(element)
+        Helper.fillFieldWithText(element, text)
+    }
+
+    awaitAndClick(element) {
+        Helper.waitForElementVisibility(element)
+        Helper.click(element)
+        this.clickArrowDownAndPressEnter()
     }
 
 }

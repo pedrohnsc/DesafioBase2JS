@@ -22,7 +22,7 @@ describe('Tests related to Report Issue', () => {
         expect(messagesPage.getSuccessMessage()).toContain('Operation successful.')
     })
 
-    it('Try to report an issue with blank field', () => {
+    fit('Try to report an issue with blank field', () => {
         reportPage.clickButtonSubmitForm()
         expect(messagesPage.getApplicationErrorMessage()).toBe('A necessary field "Summary" was empty. Please recheck your inputs.')
     })
