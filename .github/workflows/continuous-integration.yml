@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: setup-docker
+      uses: docker-practice/actions-setup-docker@0.0.1
     - name: Checkout do projeto
       uses: actions/checkout@v1
     - name: Setup do Node.js
