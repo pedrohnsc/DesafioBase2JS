@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "webdriver-manager update",
+    "pretest": "webdriver-manager update --standalone false",
     "test": "npm run test:chrome",
     "test:chrome": "protractor tests/configurations/chrome.js",
     "test:firefox": "protractor tests/configurations/firefox.js",
